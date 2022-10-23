@@ -2,8 +2,7 @@
 DAConfig:
   fqdn: galaxy.digitastuces.com
   main_iface: eth0
-  services:
-    - salt-minion
+  services: []
 
 usersandgroups:
   users:
@@ -24,4 +23,4 @@ DAInfos:
   Hoster: Online
   Type: System
   DataCenter: prodinf1
-  DeploymentDate: 2022/07/25
+  DeploymentDate: 2022/10/23
