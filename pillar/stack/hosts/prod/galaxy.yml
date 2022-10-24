@@ -3,7 +3,7 @@ DAConfig:
   fqdn: galaxy.digitastuces.com
   main_iface: eth0
   services:
-    - monservice
+    - monservicebidon
   #  - salt-master
 
 usersandgroups:
