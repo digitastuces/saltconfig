@@ -6,6 +6,11 @@ DAConfig:
     - salt-master
 
 usersandgroups:
+  # you can also define additional global configuration
+  config:
+    # you can define options for users here
+    user_options:
+      allow_gid_change: True
   users:
     {% for user, values in stack['digitastuces']['team_infra'].items() %}
     {{ user }}:
