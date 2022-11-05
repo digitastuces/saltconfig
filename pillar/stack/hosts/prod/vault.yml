@@ -6,19 +6,6 @@ DAConfig:
     - vault
   #  - salt-minion
 
-usersandgroups:
-  users:
-    {% for user, values in stack['digitastuces']['team_infra'].items() %}
-    {{ user }}:
-      {{ values }}
-    {% endfor %}
-    {% for user, values in stack['digitastuces']['team_dev'].items() %}
-    {{ user }}:
-      {{ values }}
-    {% endfor %}
-    root:
-      password: $6$ZIsj50f1YxiiC1Sj$dUcAHky.le32Cat.iu88.D/u5c3tlZUfMn/ZV02BBiw364536WArFTgaw7WrOk/XozATDX9RpmxyjSyMWDybJ1
-
 
 DAInfos:
   Customer: digitastuces
