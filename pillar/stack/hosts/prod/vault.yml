@@ -3,7 +3,7 @@ DAConfig:
   fqdn: vault.digitastuces.com
   main_iface: eth0
   services:
-    - vault
+    - covoiturage
   #  - salt-minion
 
 

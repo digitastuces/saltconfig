@@ -856,3 +856,94 @@
   INFO [123324d3] Running /usr/bin/env echo "Branch master (at 00d4005a396d0f80fc275436f9ded8b4fa45843b) deployed as release 20221103225248 by adieng" >> /srv/saltconfig/revisions.log as salt@galaxy.digitastuces.com
  DEBUG [123324d3] Command: cd /srv/saltconfig/releases && /usr/bin/env echo "Branch master (at 00d4005a396d0f80fc275436f9ded8b4fa45843b) deployed as release 20221103225248 by adieng" >> /srv/saltconfig/revisions.log
   INFO [123324d3] Finished in 1.111 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2022-11-05 20:10:53 +0100 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [2c425513] Running /usr/bin/env mkdir -p /tmp as salt@galaxy.digitastuces.com
+ DEBUG [2c425513] Command: /usr/bin/env mkdir -p /tmp
+  INFO [2c425513] Finished in 4.649 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-cb8ef8202a3ae129fe22.sh 0.0%
+  INFO Uploading /tmp/git-ssh-cb8ef8202a3ae129fe22.sh 100.0%
+  INFO [d5a7deff] Running /usr/bin/env chmod 700 /tmp/git-ssh-cb8ef8202a3ae129fe22.sh as salt@galaxy.digitastuces.com
+ DEBUG [d5a7deff] Command: /usr/bin/env chmod 700 /tmp/git-ssh-cb8ef8202a3ae129fe22.sh
+  INFO [d5a7deff] Finished in 1.027 seconds with exit status 0 (successful).
+  INFO [fd89a140] Running /usr/bin/env git ls-remote git@github.com:digitastuces/saltconfig.git HEAD as salt@galaxy.digitastuces.com
+ DEBUG [fd89a140] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-cb8ef8202a3ae129fe22.sh" ; /usr/bin/env git ls-remote git@github.com:digitastuces/saltconfig.git HEAD )
+ DEBUG [fd89a140] 	2e841d3b00b1731cab0875021f18b3cba438feab	HEAD
+  INFO [fd89a140] Finished in 4.808 seconds with exit status 0 (successful).
+  INFO [41f6f050] Running /usr/bin/env mkdir -p /srv/saltconfig/shared /srv/saltconfig/releases as salt@galaxy.digitastuces.com
+ DEBUG [41f6f050] Command: /usr/bin/env mkdir -p /srv/saltconfig/shared /srv/saltconfig/releases
+  INFO [41f6f050] Finished in 1.124 seconds with exit status 0 (successful).
+ DEBUG [994f6b79] Running [ -f /srv/saltconfig/current/REVISION ] as salt@galaxy.digitastuces.com
+ DEBUG [994f6b79] Command: [ -f /srv/saltconfig/current/REVISION ]
+ DEBUG [994f6b79] Finished in 1.124 seconds with exit status 0 (successful).
+ DEBUG [2efa137e] Running /usr/bin/env cat /srv/saltconfig/current/REVISION 2>/dev/null as salt@galaxy.digitastuces.com
+ DEBUG [2efa137e] Command: /usr/bin/env cat /srv/saltconfig/current/REVISION 2>/dev/null
+ DEBUG [2efa137e] 	00d4005a396d0f80fc275436f9ded8b4fa45843b
+ DEBUG [2efa137e] Finished in 1.024 seconds with exit status 0 (successful).
+ DEBUG [002eb731] Running [ -f /srv/saltconfig/repo/HEAD ] as salt@galaxy.digitastuces.com
+ DEBUG [002eb731] Command: [ -f /srv/saltconfig/repo/HEAD ]
+ DEBUG [002eb731] Finished in 1.004 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /srv/saltconfig/repo
+ DEBUG [70ec4b37] Running if test ! -d /srv/saltconfig/repo; then echo "Directory does not exist '/srv/saltconfig/repo'" 1>&2; false; fi as salt@galaxy.digitastuces.com
+ DEBUG [70ec4b37] Command: if test ! -d /srv/saltconfig/repo; then echo "Directory does not exist '/srv/saltconfig/repo'" 1>&2; false; fi
+ DEBUG [70ec4b37] Finished in 1.248 seconds with exit status 0 (successful).
+  INFO [afec64d9] Running /usr/bin/env git remote set-url origin git@github.com:digitastuces/saltconfig.git as salt@galaxy.digitastuces.com
+ DEBUG [afec64d9] Command: cd /srv/saltconfig/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-cb8ef8202a3ae129fe22.sh" ; /usr/bin/env git remote set-url origin git@github.com:digitastuces/saltconfig.git )
+  INFO [afec64d9] Finished in 1.121 seconds with exit status 0 (successful).
+  INFO [ea07e99f] Running /usr/bin/env git remote update --prune as salt@galaxy.digitastuces.com
+ DEBUG [ea07e99f] Command: cd /srv/saltconfig/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-cb8ef8202a3ae129fe22.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [ea07e99f] 	Fetching origin
+ DEBUG [ea07e99f] 	From github.com:digitastuces/saltconfig
+   00d4005..2e841d3  master     -> master
+  INFO [ea07e99f] Finished in 5.009 seconds with exit status 0 (successful).
+ DEBUG [6f614b5e] Running if test ! -d /srv/saltconfig/repo; then echo "Directory does not exist '/srv/saltconfig/repo'" 1>&2; false; fi as salt@galaxy.digitastuces.com
+ DEBUG [6f614b5e] Command: if test ! -d /srv/saltconfig/repo; then echo "Directory does not exist '/srv/saltconfig/repo'" 1>&2; false; fi
+ DEBUG [6f614b5e] Finished in 1.114 seconds with exit status 0 (successful).
+  INFO [51129c6e] Running /usr/bin/env mkdir -p /srv/saltconfig/releases/20221105191110 as salt@galaxy.digitastuces.com
+ DEBUG [51129c6e] Command: cd /srv/saltconfig/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-cb8ef8202a3ae129fe22.sh" ; /usr/bin/env mkdir -p /srv/saltconfig/releases/20221105191110 )
+  INFO [51129c6e] Finished in 1.125 seconds with exit status 0 (successful).
+  INFO [75b8bda4] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /srv/saltconfig/releases/20221105191110 as salt@galaxy.digitastuces.com
+ DEBUG [75b8bda4] Command: cd /srv/saltconfig/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-cb8ef8202a3ae129fe22.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /srv/saltconfig/releases/20221105191110 )
+  INFO [75b8bda4] Finished in 1.125 seconds with exit status 0 (successful).
+ DEBUG [dcd03273] Running if test ! -d /srv/saltconfig/repo; then echo "Directory does not exist '/srv/saltconfig/repo'" 1>&2; false; fi as salt@galaxy.digitastuces.com
+ DEBUG [dcd03273] Command: if test ! -d /srv/saltconfig/repo; then echo "Directory does not exist '/srv/saltconfig/repo'" 1>&2; false; fi
+ DEBUG [dcd03273] Finished in 1.129 seconds with exit status 0 (successful).
+ DEBUG [8bf76631] Running /usr/bin/env git rev-list --max-count=1 master as salt@galaxy.digitastuces.com
+ DEBUG [8bf76631] Command: cd /srv/saltconfig/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-cb8ef8202a3ae129fe22.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [8bf76631] 	2e841d3b00b1731cab0875021f18b3cba438feab
+ DEBUG [8bf76631] Finished in 1.023 seconds with exit status 0 (successful).
+ DEBUG [7532300f] Running if test ! -d /srv/saltconfig/releases/20221105191110; then echo "Directory does not exist '/srv/saltconfig/releases/20221105191110'" 1>&2; false; fi as salt@galaxy.digitastuces.com
+ DEBUG [7532300f] Command: if test ! -d /srv/saltconfig/releases/20221105191110; then echo "Directory does not exist '/srv/saltconfig/releases/20221105191110'" 1>&2; false; fi
+ DEBUG [7532300f] Finished in 1.119 seconds with exit status 0 (successful).
+  INFO [2ddfe475] Running /usr/bin/env echo "2e841d3b00b1731cab0875021f18b3cba438feab" > REVISION as salt@galaxy.digitastuces.com
+ DEBUG [2ddfe475] Command: cd /srv/saltconfig/releases/20221105191110 && /usr/bin/env echo "2e841d3b00b1731cab0875021f18b3cba438feab" > REVISION
+  INFO [2ddfe475] Finished in 1.016 seconds with exit status 0 (successful).
+  INFO [de11fad4] Running /usr/bin/env ln -s /srv/saltconfig/releases/20221105191110 /srv/saltconfig/releases/current as salt@galaxy.digitastuces.com
+ DEBUG [de11fad4] Command: /usr/bin/env ln -s /srv/saltconfig/releases/20221105191110 /srv/saltconfig/releases/current
+  INFO [de11fad4] Finished in 1.133 seconds with exit status 0 (successful).
+  INFO [590bc75f] Running /usr/bin/env mv /srv/saltconfig/releases/current /srv/saltconfig as salt@galaxy.digitastuces.com
+ DEBUG [590bc75f] Command: /usr/bin/env mv /srv/saltconfig/releases/current /srv/saltconfig
+  INFO [590bc75f] Finished in 1.126 seconds with exit status 0 (successful).
+ DEBUG [d2bf156c] Running /usr/bin/env ls -x /srv/saltconfig/releases as salt@galaxy.digitastuces.com
+ DEBUG [d2bf156c] Command: /usr/bin/env ls -x /srv/saltconfig/releases
+ DEBUG [d2bf156c] 	20221027185007	20221103203144	20221103205640	20221103223722	20221103225248
+20221105191110
+ DEBUG [d2bf156c] Finished in 1.124 seconds with exit status 0 (successful).
+  INFO Keeping 5 of 6 deployed releases on galaxy.digitastuces.com
+ DEBUG [ded033b3] Running [ -d /srv/saltconfig/current ] as salt@galaxy.digitastuces.com
+ DEBUG [ded033b3] Command: [ -d /srv/saltconfig/current ]
+ DEBUG [ded033b3] Finished in 1.023 seconds with exit status 0 (successful).
+ DEBUG [5157580e] Running /usr/bin/env readlink /srv/saltconfig/current as salt@galaxy.digitastuces.com
+ DEBUG [5157580e] Command: /usr/bin/env readlink /srv/saltconfig/current
+ DEBUG [5157580e] 	/srv/saltconfig/releases/20221105191110
+ DEBUG [5157580e] Finished in 1.132 seconds with exit status 0 (successful).
+  INFO [2db4030a] Running /usr/bin/env rm -rf /srv/saltconfig/releases/20221027185007 as salt@galaxy.digitastuces.com
+ DEBUG [2db4030a] Command: /usr/bin/env rm -rf /srv/saltconfig/releases/20221027185007
+  INFO [2db4030a] Finished in 0.995 seconds with exit status 0 (successful).
+ DEBUG [3fb775b9] Running if test ! -d /srv/saltconfig/releases; then echo "Directory does not exist '/srv/saltconfig/releases'" 1>&2; false; fi as salt@galaxy.digitastuces.com
+ DEBUG [3fb775b9] Command: if test ! -d /srv/saltconfig/releases; then echo "Directory does not exist '/srv/saltconfig/releases'" 1>&2; false; fi
+ DEBUG [3fb775b9] Finished in 1.251 seconds with exit status 0 (successful).
+  INFO [387c0bb5] Running /usr/bin/env echo "Branch master (at 2e841d3b00b1731cab0875021f18b3cba438feab) deployed as release 20221105191110 by adieng" >> /srv/saltconfig/revisions.log as salt@galaxy.digitastuces.com
+ DEBUG [387c0bb5] Command: cd /srv/saltconfig/releases && /usr/bin/env echo "Branch master (at 2e841d3b00b1731cab0875021f18b3cba438feab) deployed as release 20221105191110 by adieng" >> /srv/saltconfig/revisions.log
+  INFO [387c0bb5] Finished in 1.019 seconds with exit status 0 (successful).
